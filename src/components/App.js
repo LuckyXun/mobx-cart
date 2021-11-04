@@ -1,7 +1,18 @@
-import TodoContainer from "./Todos/Container"
+import  AppleBasket from "./AppleBasket";
+
+import { RootStoreProvider } from "../store";
+
+
+
 
 function App() {
-  return <TodoContainer />
+  return (
+    <RootStoreProvider>
+        <AppleBasket></AppleBasket>
+    </RootStoreProvider>
+  );
 }
 
-export default App
+export default App;
+
+

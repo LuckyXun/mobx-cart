@@ -1,16 +1,32 @@
 /*
  * @Author: XunL
- * @Date: 2021-10-28 00:05:28
- * @LastEditTime: 2021-10-28 00:20:47
+ * @LastEditTime: 2021-11-03 17:01:03
  * @Description: file content
  */
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import todoSlice from './todos.slice'
 
 
-export default configureStore({
-  middleware: [...getDefaultMiddleware()],
-  reducer: {
-    todo: todoSlice
+import AppleStore from "./appleStore";
+
+import { createContext, useContext } from "react";
+
+class RootStore {
+  constructor() {
+    this.appleStore = new AppleStore()
   }
-})
+}
+
+const rootStore = new RootStore();
+
+const RootStoreContext = createContext();
+
+export const RootStoreProvider = ({ children }) => {
+  return (
+    <RootStoreContext.Provider value={rootStore}>
+      {children}
+    </RootStoreContext.Provider>
+  );
+};
+
+export const useRootStore = ()=>{
+  return useContext(RootStoreContext)
+}
