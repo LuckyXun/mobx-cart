@@ -1,0 +1,6 @@
+{
+    "rewrites": [{
+        "source": "/apples",
+        "destination": "http://117.50.92.194:1337/apples"
+    }]
+}
