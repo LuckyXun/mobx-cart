@@ -28,7 +28,7 @@ export default class TodoStore {
   }
   *loadApples() {
     let remoteApples = yield axios
-      .get("http://117.50.92.194:1337/apples")
+      .get("/apples")
       .then((res) => res.data);
       remoteApples.forEach((apple) => {
       this.apples.push(new Apple(apple));
