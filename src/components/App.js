@@ -1,6 +1,6 @@
 import  AppleBasket from "./AppleBasket";
 
-import { RootStoreProvider } from "../store";
+import { RootStoreProvider } from "../Store";
 
 
 
