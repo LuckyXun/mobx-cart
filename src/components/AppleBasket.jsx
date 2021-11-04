@@ -2,7 +2,7 @@ import React from "react";
 import AppleItem from "./AppleItem";
 import "../styles/appleBasket.scss";
 import { observer } from "mobx-react";
-import { useRootStore } from "../store";
+import { useRootStore } from "../Store";
 
 
 function AppleBusket() {
